@@ -1,13 +1,13 @@
 <template>
   <header class="flex">
     <div class="branding" style="margin-bottom: 14px;background-color:white;">
-      <img src="@/assets/profile.png" alt="menu dollar" draggable="false" />
+      <img src="@/assets/profile.png" alt="profile" draggable="false" />
     </div>
     <div class="branding flex">
       <img src="@/assets/file-invoice-dollar-solid.png" alt="menu dollar" draggable="true" />
     </div>
-    <div class="branding" 
-      <img src="@/assets/profile.png" alt="menu dollar" draggable="false" />
+    <div class="branding" >
+      <img src="@/assets/profile.png" alt="profile" draggable="false" />
     </div>
   </header>
 
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'Navigtaion',
+  name: 'Navigation',
 };
 </script>
 
