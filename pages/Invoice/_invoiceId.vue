@@ -1,7 +1,7 @@
 <template>
   <div v-if="currentInvoice" class="invoice-view container">
     <nuxt-link class="nav-link flex" to="/">
-      <img src="@/assets/icon-arrow-left.svg" alt="left arrow icon" /> Go Back
+      <img src="@/assets/icon-arrow-left.svg" alt="left arrow icon" /> kembali 
     </nuxt-link>
 
     <!-- Header -->
