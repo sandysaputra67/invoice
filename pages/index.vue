@@ -16,7 +16,7 @@
             <li @click="filteredInvoices">Draft</li>
             <li @click="filteredInvoices">Pending</li>
             <li @click="filteredInvoices">Paid</li>
-            <li @click="filteredInvoices">Clear Filter</li>
+            <!-- <li @click="filteredInvoices">Clear Filter</li> -->
           </ul>
         </div>
         <div class="button flex" @click="newInvoice">
@@ -35,7 +35,6 @@
     <div v-else class="empty flex flex-column">
       <img src="@/assets/illustration-empty.svg" alt="Empty" />
       <h3>There is nothing here</h3>
-      <p>Create a new invoice by clicking the New invoice button and get started!</p>
     </div>
   </div>
 </template>
@@ -78,13 +77,13 @@ export default {
       this.filterMenu = !this.filterMenu;
     },
 
-    filteredInvoices(e) {
-      if (e.target.innerText === 'Clear Filter') {
-        this.filteredInvoice = null;
-        return;
-      }
-      this.filteredInvoice = e.target.innerText;
-    },
+    // filteredInvoices(e) {
+    //   if (e.target.innerText === 'Clear Filter') {
+    //     this.filteredInvoice = null;
+    //     return;
+    //   }
+    //   this.filteredInvoice = e.target.innerText;
+    // },
   },
 };
 </script>
