@@ -6,7 +6,7 @@
       <span class="person">{{ invoice.clientName }}</span>
     </div>
     <div class="right flex">
-      <span class="price">${{ invoice.invoiceTotal }}</span>
+      <span class="price">Rp{{ invoice.invoiceTotal }}</span>
       <div
         class="status-button flex"
         :class="{ paid: invoice.invoicePaid, draft: invoice.invoiceDraft, pending: invoice.invoicePending }"

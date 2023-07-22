@@ -1,13 +1,17 @@
 <template>
   <header class="flex">
+    <div class="branding" style="margin-bottom: 14px;background-color:white;">
+      <img src="@/assets/profile.png" alt="menu dollar" draggable="false" />
+    </div>
     <div class="branding flex">
-      <img
-        src="@/assets/file-invoice-dollar-solid.png"
-        alt="menu dollar"
-        draggable="false"
-      />
+      <img src="@/assets/file-invoice-dollar-solid.png" alt="menu dollar" draggable="true" />
+    </div>
+    <div class="branding1" style="margin-bottom: 14px;background-color:white;margin-top: 30em;">
+      <img src="@/assets/profile.png" alt="menu dollar" draggable="false" />
     </div>
   </header>
+
+
 </template>
 
 <script>
@@ -27,6 +31,7 @@ header {
     flex-direction: column;
     border-radius: 0 20px 20px 0;
   }
+}
 
   .branding {
     border-radius: 0 20px 20px 0;
@@ -42,5 +47,18 @@ header {
       height: 30px;
     }
   }
-}
+  .branding1 {
+    border-radius: 0 20px 20px 0;
+    background-color: #7c5dfa;
+    justify-content: center;
+    padding: 24px;
+    @media (min-width: 900px) {
+      width: 100%;
+    }
+
+    img {
+      width: auto;
+      height: 30px;
+    }
+  }
 </style>

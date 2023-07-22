@@ -9,7 +9,7 @@
           <InvoiceModal v-if="invoiceModal" />
         </transition>
         <Nuxt />
-        <Footer />
+
       </div>
     </div>
     <div v-else class="mobile-message flex flex-column">
@@ -25,7 +25,7 @@ import { mapState, mapActions } from 'vuex';
 export default {
   data() {
     return {
-      isMobile: false,
+      isMobile: true,
     };
   },
   computed: {

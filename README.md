@@ -15,14 +15,3 @@ $ npm run start
 
 # generate static project
 $ npm run generate
-```
-### See Demo
-See [Invoice App](https://nuxt-invoice-app.vercel.app/).
-***
-# Images
-![Home](https://i.ibb.co/tP596RH/home.png)
----
-![Create Invoice](https://i.ibb.co/Vmc0TRL/invoice-Moda.png)
----
-![Invoice Details](https://i.ibb.co/yRSx5FJ/single-Invoice.png)
-

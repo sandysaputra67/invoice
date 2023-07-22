@@ -18,8 +18,8 @@
             <input id="billerCity" v-model="billerCity" required type="text" />
           </div>
           <div class="input flex flex-column">
-            <label for="billerZipCode">Zip Code</label>
-            <input id="billerZipCode" v-model="billerZipCode" required type="text" />
+            <label for="billerPostCode">Post Code</label>
+            <input id="billerZipCode" v-model="billerPostCode" required type="text" />
           </div>
           <div class="input flex flex-column">
             <label for="billerCountry">Country</label>
@@ -70,17 +70,18 @@
             <label for="paymentDueDate">Payment Due</label>
             <input id="paymentDueDate" v-model="paymentDueDate" disabled type="text" />
           </div>
+          <div class="input flex flex-column">
+            <label for="paymentTerms">Payment Terms</label>
+            <select id="paymentTerms" v-model="paymentTerms" required @change="changePaymentTerms">
+              <option value="30">Net 30 Days</option>
+              <option value="60">Net 60 Days</option>
+            </select>
+          </div>
         </div>
+
         <div class="input flex flex-column">
-          <label for="paymentTerms">Payment Terms</label>
-          <select id="paymentTerms" v-model="paymentTerms" required @change="changePaymentTerms">
-            <option value="30">Net 30 Days</option>
-            <option value="60">Net 60 Days</option>
-          </select>
-        </div>
-        <div class="input flex flex-column">
-          <label for="productDescription">Product Description</label>
-          <input id="productDescription" v-model="productDescription" required type="text" />
+          <label for="projectDescription">Project Description</label>
+          <input id="projectDescription" v-model="projectDescription" required type="text" />
         </div>
         <div class="work-items">
           <h3>Item List</h3>
@@ -95,26 +96,23 @@
               <td class="item-name"><input v-model="item.itemName" type="text" /></td>
               <td class="qty"><input v-model="item.qty" type="text" /></td>
               <td class="price"><input v-model="item.price" type="text" /></td>
-              <td class="total flex">${{ (item.total = item.qty * item.price) }}</td>
+              <td class="total flex">Rp {{ (item.total = item.qty * item.price) }},</td>
               <img src="@/assets/icon-delete.svg" alt="delete icon" @click="deleteInvoiceItem(item.id)" />
             </tr>
           </table>
           <div class="flex button" @click="addNewInvoiceItem">
-            <img src="@/assets/icon-plus.svg" alt="plus icon" />
+            <img src="@/assets/plusicon.png" alt="plus icon" width="14" height="18" />
             Add New Item
           </div>
         </div>
       </div>
 
-      <!-- Save/Exit -->
       <div class="save flex">
-        <div class="left">
-          <button class="red" type="button" @click="closeInvoice">Cancel</button>
-        </div>
         <div class="right flex">
-          <button v-if="!editInvoice" type="submit" class="dark-purple" @click="saveDraft">Save Draft</button>
+          <button class="red" type="button" @click="closeInvoice">Cancel</button>
+          <button v-if="!editInvoice" type="submit" class="dark" @click="saveDraft">Save Draft</button>
           <button v-if="!editInvoice" type="submit" class="purple" @click="publishInvoice">Create Invoice</button>
-          <button v-if="editInvoice" type="submit" class="purple">Update Invoice</button>
+          <button v-if="editInvoice" type="submit" class="purple">Save Changes</button>
         </div>
       </div>
     </form>
@@ -139,7 +137,7 @@ export default {
       loading: false,
       billerStreetAddress: null,
       billerCity: null,
-      billerZipCode: null,
+      billerPostCode: null,
       billerCountry: null,
       clientName: null,
       clientEmail: null,
@@ -152,7 +150,7 @@ export default {
       paymentTerms: null,
       paymentDueDateUnix: null,
       paymentDueDate: null,
-      productDescription: null,
+      projectDescription: null,
       invoicePending: null,
       invoiceDraft: null,
       invoiceItemList: [],
@@ -176,7 +174,7 @@ export default {
       this.invoiceId = currentInvoice.invoiceId;
       this.billerStreetAddress = currentInvoice.billerStreetAddress;
       this.billerCity = currentInvoice.billerCity;
-      this.billerZipCode = currentInvoice.billerZipCode;
+      this.billerPostCode = currentInvoice.billerPostCode;
       this.billerCountry = currentInvoice.billerCountry;
       this.clientName = currentInvoice.clientName;
       this.clientEmail = currentInvoice.clientEmail;
@@ -189,7 +187,7 @@ export default {
       this.paymentTerms = currentInvoice.paymentTerms;
       this.paymentDueDateUnix = currentInvoice.paymentDueDateUnix;
       this.paymentDueDate = currentInvoice.paymentDueDate;
-      this.productDescription = currentInvoice.productDescription;
+      this.projectDescription = currentInvoice.projectDescription;
       this.invoicePending = currentInvoice.invoicePending;
       this.invoiceDraft = currentInvoice.invoiceDraft;
       this.invoiceItemList = currentInvoice.invoiceItemList;
@@ -311,7 +309,7 @@ export default {
         invoiceId: this.invoiceId,
         billerStreetAddress: this.billerStreetAddress,
         billerCity: this.billerCity,
-        billerZipCode: this.billerZipCode,
+        billerPostCode: this.billerPostCode,
         billerCountry: this.billerCountry,
         clientName: this.clientName,
         clientEmail: this.clientEmail,
@@ -322,7 +320,7 @@ export default {
         paymentTerms: this.paymentTerms,
         paymentDueDate: this.paymentDueDate,
         paymentDueDateUnix: this.paymentDueDateUnix,
-        productDescription: this.productDescription,
+        projectDescription: this.projectDescription,
         invoiceItemList: this.invoiceItemList,
         invoiceTotal: this.invoiceTotal,
         invoicePending: this.invoicePending,
