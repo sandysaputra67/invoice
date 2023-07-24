@@ -2,7 +2,7 @@
   <div v-if="invoicesLoaded">
     <div v-if="!isMobile" class="app flex flex-column">
       <Navigation />
-      <toggle-switch />
+
 
       <div class="app-content flex flex-column">
         <Modal v-if="modalActive" />
@@ -41,7 +41,7 @@ export default {
     checkScreen() {
       const windowWidth = window.innerWidth;
       if (windowWidth < 768) {
-        this.isMobile = true;
+        this.isMobile = false;
       } else {
         this.isMobile = false;
       }
