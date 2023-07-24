@@ -77,13 +77,13 @@ export default {
       this.filterMenu = !this.filterMenu;
     },
 
-    // filteredInvoices(e) {
-    //   if (e.target.innerText === 'Clear Filter') {
-    //     this.filteredInvoice = null;
-    //     return;
-    //   }
-    //   this.filteredInvoice = e.target.innerText;
-    // },
+    filteredInvoices(e) {
+       if (e.target.innerText === 'Clear Filter') {
+         this.filteredInvoice = null;
+       return;
+       }
+       this.filteredInvoice = e.target.innerText;
+     },
   },
 };
 </script>
