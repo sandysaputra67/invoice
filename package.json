@@ -1,7 +1,17 @@
 {
+  "name": "invoiceapp",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint": "npm run lint:js"
+  },
   "dependencies": {
-    "@nuxtjs/vuetify": "^1.12.3",
-    "@vue-a11y/dark-mode": "^1.1.1",
+    "bootstrap": "^5.3.0",
     "core-js": "^3.15.1",
     "firebase": "^9.5.0",
     "nuxt": "^2.15.7",
@@ -9,6 +19,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
+    "@nuxtjs/color-mode": "^3.3.0",
     "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
     "autoprefixer": "^10.4.14",
