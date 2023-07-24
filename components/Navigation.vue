@@ -1,18 +1,13 @@
 <template>
   <header class="flex">
-    <div>
-    <label class="switch">
-      <input type="checkbox" v-model="isDarkMode" @change="toggleTheme">
-      <span class="slider round"></span>
-    </label>
-  </div>
+
     <div class="branding" style="margin-bottom: 14px;background-color:white;">
       <img src="@/assets/profile.png" alt="profile" draggable="false" />
     </div>
     <div class="branding flex">
       <img src="@/assets/file-invoice-dollar-solid.png" alt="menu" draggable="true" />
     </div>
-<div></div>
+
     <div class="branding" >
       <img src="@/assets/profile.png" alt="profile" draggable="false" />
     </div>
@@ -26,17 +21,8 @@ export default {
   name: 'Navigation',
 
 
-  methods: {
-    toggleTheme() {
-      if (this.isDarkMode) {
-        document.documentElement.classList.add("dark-mode");
-        document.documentElement.classList.remove("light-mode");
-      } else {
-        document.documentElement.classList.add("light-mode");
-        document.documentElement.classList.remove("dark-mode");
-      }
-    },
-  },
+
+
 
 };
 </script>
