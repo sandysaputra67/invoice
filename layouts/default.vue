@@ -1,5 +1,6 @@
 <template>
-  <div v-if="invoicesLoaded">
+  <div  :class="{ 'dark-mode': isDarkMode, 'light-mode': !isDarkMode }">
+    <div v-if="invoicesLoaded">
     <div v-if="!isMobile" class="app flex flex-column">
       <Navigation />
 
@@ -18,6 +19,8 @@
       <p>To use this app, please use computer or Tablet</p>
     </div>
   </div>
+  </div>
+
 </template>
 
 <script>
@@ -27,6 +30,8 @@ export default {
   data() {
     return {
       isMobile: true,
+      isDarkMode:false,
+
     };
   },
   computed: {
@@ -37,6 +42,7 @@ export default {
     window.addEventListener('resize', this.checkScreen);
   },
   methods: {
+
     ...mapActions(['GET_INVOICES']),
     checkScreen() {
       const windowWidth = window.innerWidth;
@@ -49,3 +55,16 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+/* Light mode styles */
+.light-mode {
+  background-color: white;
+  color: black;
+}
+</style>

@@ -6,7 +6,26 @@
     <div class="branding flex">
       <img src="@/assets/file-invoice-dollar-solid.png" alt="menu" draggable="true" />
     </div>
-    <img src="@/assets/starts.svg" style="margin-top: 10em;padding-left: 20%;"  width="70" height="30" @click="toggleDarkMode"/>
+
+    <img
+      v-if="isDarkMode"
+      src="@/assets/moon.svg"
+      style="margin-top: 10em; padding-left: 20%;"
+      width="70"
+      height="30"
+      @click="toggleDarkMode"
+    />
+
+
+    <img
+      v-else
+      src="@/assets/moon.svg"
+      style="margin-top: 10em; padding-left: 20%;color:"
+      width="70"
+      height="30"
+
+      @click="toggleDarkMode"
+    />
     <div class="branding"  style="margin-top: 15em; background-color: white">
       <img src="@/assets/profile.png" alt="profile" draggable="true" />
     </div>
