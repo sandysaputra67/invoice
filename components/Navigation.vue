@@ -38,13 +38,13 @@ export default {
 
   data() {
     return {
-      isDarkMode: false // Set this to true if you want to start with dark mode by default
+      isDarkMode: false
     };
   },
   methods: {
     toggleDarkMode() {
       this.isDarkMode = !this.isDarkMode;
-      // You can also save the user's preference in local storage or a cookie to remember their choice across sessions.
+
     }
   }
 };
