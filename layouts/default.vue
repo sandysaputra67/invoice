@@ -1,5 +1,5 @@
 <template>
-  <div  :class="{ 'dark-mode': isDarkMode, 'light-mode': !isDarkMode }">
+  <div>
     <div v-if="invoicesLoaded">
     <div v-if="!isMobile" class="app flex flex-column">
       <Navigation />
@@ -30,7 +30,6 @@ export default {
   data() {
     return {
       isMobile: true,
-      isDarkMode:false,
 
     };
   },
